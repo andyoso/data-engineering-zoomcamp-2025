@@ -280,10 +280,8 @@ Paste the output of this command into the homework submission form.
 >ANSWER ✅
 ```
 andyoso@LAPTOP-2SVHURIR:~/data-engineering-zoomcamp-2025/01-docker-terraform/2_terraform_gcp$ terraform apply
-google_storage_bucket.data-lake-bucket: Refreshing state... [id=wired-name-443713-g5-andy-bucket]
 
-Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following     
-symbols:
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
   + create
 
 Terraform will perform the following actions:
@@ -313,7 +311,52 @@ Terraform will perform the following actions:
       + access (known after apply)
     }
 
-Plan: 1 to add, 0 to change, 0 to destroy.
+  # google_storage_bucket.data-lake-bucket will be created
+  + resource "google_storage_bucket" "data-lake-bucket" {
+      + effective_labels            = {
+          + "goog-terraform-provisioned" = "true"
+        }
+      + force_destroy               = true
+      + id                          = (known after apply)
+      + location                    = "ASIA"
+      + name                        = "wired-name-443713-g5-andy-bucket"
+      + project                     = (known after apply)
+      + project_number              = (known after apply)
+      + public_access_prevention    = (known after apply)
+      + rpo                         = (known after apply)
+      + self_link                   = (known after apply)
+      + storage_class               = "STANDARD"
+      + terraform_labels            = {
+          + "goog-terraform-provisioned" = "true"
+        }
+      + uniform_bucket_level_access = (known after apply)
+      + url                         = (known after apply)
+
+      + lifecycle_rule {
+          + action {
+              + type          = "AbortIncompleteMultipartUpload"
+                # (1 unchanged attribute hidden)
+            }
+          + condition {
+              + age                    = 1
+              + matches_prefix         = []
+              + matches_storage_class  = []
+              + matches_suffix         = []
+              + with_state             = (known after apply)
+                # (3 unchanged attributes hidden)
+            }
+        }
+
+      + soft_delete_policy (known after apply)
+
+      + versioning {
+          + enabled = true
+        }
+
+      + website (known after apply)
+    }
+
+Plan: 2 to add, 0 to change, 0 to destroy.
 
 Do you want to perform these actions?
   Terraform will perform the actions described above.
@@ -322,9 +365,11 @@ Do you want to perform these actions?
   Enter a value: yes
 
 google_bigquery_dataset.dataset: Creating...
+google_storage_bucket.data-lake-bucket: Creating...
 google_bigquery_dataset.dataset: Creation complete after 1s [id=projects/wired-name-443713-g5/datasets/dataset]
+google_storage_bucket.data-lake-bucket: Creation complete after 3s [id=wired-name-443713-g5-andy-bucket]
 
-Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
 ## Submitting the solutions
 
 * Form for submitting: https://courses.datatalks.club/de-zoomcamp-2024/homework/hw01
