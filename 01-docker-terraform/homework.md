@@ -35,7 +35,7 @@ docker run --help
 docker build --help
 # --rm    Automatically remove the container when it exits
 ```
->ANSWER 
+>ANSWER ✅
 ```
 --rm
 ```
@@ -69,7 +69,7 @@ docker run -it --entrypoint=bash python:3.9
 # [notice] To update, run: pip install --upgrade pip
 ```
 When running docker run -it --entrypoint=bash python:3.9 and executing pip list, the displayed version of wheel is 0.45.1. However, this version is not listed among the provided answer options. Based on the available options, the closest version to the actual one, 0.42.0, was chosen as the correct answer.
->ANSWER 
+>ANSWER ✅
 ```
 0.42.0
 ```
@@ -136,7 +136,7 @@ where
     and DATE(lpep_dropoff_datetime) < '2019-09-19' 
 
 ```
->ANSWER
+>ANSWER✅
 ```
 15612
 ```
@@ -162,7 +162,7 @@ ORDER BY
 	trip_distance DESC
 LIMIT 1
 ```
->ANSWER 
+>ANSWER ✅
 ```
 2019-09-26
 ```
@@ -202,7 +202,7 @@ ORDER BY
 LIMIT 
 	3
 ```
->ANSWER 
+>ANSWER ✅
 ```
 "Brooklyn" "Manhattan" "Queens"
 ```
@@ -251,7 +251,7 @@ ORDER BY
 LIMIT 
 	1
 ```
->ANSWER 
+>ANSWER ✅
 ```
 "JFK Airport"
 ```
